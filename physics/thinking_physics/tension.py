@@ -10,7 +10,7 @@ origin = np.array([0, 0])
 
 fig, ax = plt.subplots(figsize=(8, 8))
 line, = ax.plot(0, 0)
-plt.subplots_adjust(left=0.25, bottom=0.25)
+plt.subplots_adjust(left=0.1, bottom=0.25)
 
 
 def calculate(F, angle):
@@ -30,15 +30,17 @@ def calculate(F, angle):
     ax.quiver(a_vec1[0], a_vec1[1], a_vec2[0], a_vec2[1], **_kwargs, color='#dddddd')
     ax.quiver(a_vec2[0], a_vec2[1], a_vec1[0], a_vec1[1], **_kwargs, color='#dddddd')
 
+    return a_len
 
 def update(*args):
     F = s_F.val
     angle = s_angle.val
 
     ax.cla()
-    calculate(F, angle)
+    a_len = calculate(F, angle)
     ax.set_ylim([0, 50])
     ax.set_xlim([-100, 100])
+    ax.text(-97, 47, f'Tension = {a_len}')
     fig.canvas.draw_idle()
 
 
