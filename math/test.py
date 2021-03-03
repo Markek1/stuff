@@ -1,9 +1,11 @@
-import random
-from math import factorial as f
+import dis
 
-w = 20
-a = 150
-g = 20
+def is_odd_and(n):
+    return n & 1 == 1
 
-result = (f(g) * f(a - w)) / (f(a) * f(g - w))
-print(result)
+def is_odd_mod(n):
+    return n % 2 != 0
+
+print(dis.dis(is_odd_and))
+
+print(dis.dis(is_odd_mod))
