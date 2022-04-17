@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <math.h>
 
-
 void sums(int n)
 {
     int exponent = n - 1;
     int sum[n];
     int tmp;
-    int total = (1 << exponent) - 1;
+    int total = (1 << exponent);
 
     for (int i = 0; i < total; i++)
     {
@@ -24,7 +23,6 @@ void sums(int n)
             }
             else
                 tmp += 1;
-
         }
         sum[0] = tmp;
 

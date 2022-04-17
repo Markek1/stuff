@@ -12,5 +12,5 @@ def sums(n):
         print(_sum[::-1])
 
 
-n = int(input())
+n = int(input('Input number: '))
 sums(n)
